@@ -209,6 +209,7 @@ body {
    &__info {
       padding: 90px 0 44px;
       flex: 1 1 600px;
+
       @media (max-width: $media2 + px) {
          padding: 40px 0 40px;
       }
@@ -322,10 +323,10 @@ body {
    }
 
    &__list {
+      position: relative;
       width: 104px;
       height: 38px;
       margin-right: 12px;
-      position: relative;
    }
 
    &__item {
@@ -371,6 +372,7 @@ body {
 .animation {
    height: 631px;
    width: 500px;
+
    position: absolute;
    top: 50%;
    right: -30px;
@@ -378,11 +380,8 @@ body {
 
    @media (max-width: $media2 + px) {
       right: auto;
-      transform: translate(-50%, -50%);
       left: 50%;
-   }
-
-   &__flags {
+      transform: translate(-50%, -50%);
    }
 
    &__girl {
@@ -390,6 +389,7 @@ body {
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+
       width: 337px;
       height: 557px;
 
@@ -399,6 +399,7 @@ body {
          left: 50%;
          z-index: -1;
          transform: translateX(-50%);
+
          content: "";
          display: block;
          width: 280px;
@@ -416,15 +417,15 @@ body {
 }
 
 .flags {
-   width: 450px;
-   height: 450px;
-   border-radius: 450px;
-   border: 2px solid #e8e8e8;
-
    position: absolute;
    bottom: 150px;
    left: 50%;
    transform: translateX(-50%);
+
+   width: 450px;
+   height: 450px;
+   border-radius: 450px;
+   border: 2px solid #e8e8e8;
 
    animation: circle 4s linear 5s infinite;
 
@@ -507,9 +508,11 @@ body {
 
 .burger {
    display: none;
+
    position: relative;
    width: 24px;
    height: 17px;
+
    flex-direction: column;
    justify-content: center;
 
