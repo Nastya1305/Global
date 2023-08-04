@@ -2,9 +2,9 @@
 
 $minWidth: 320;
 $contentWidth: 1110;
-$media1: $contentWidth + 22;
-$media2: 992.98;
-$media3: 767.98;
+$media1: $contentWidth + 60;
+$media2: 1029.98;
+$media3: 809.98;
 $media4: 479.98;
 
 $background-color: #ecf7f3;
@@ -54,6 +54,10 @@ body {
    justify-content: space-between;
    align-items: center;
 
+   @media (max-width: $media4 + px) {
+      height: 80px;
+   }
+
    .header__btn {
       @media (max-width: $media3 + px) {
          display: none;
@@ -62,22 +66,27 @@ body {
 
    &--dropdown {
       position: relative;
+
       @media (max-width: $media3 + px) {
          .nav {
-            display: flex;
-            justify-content: center;
-
             position: absolute;
-            background-color: $background-color;
             top: 100px;
             z-index: 10;
+
             height: 100vh;
             width: 100%;
 
+            display: flex;
+            justify-content: center;
+
+            background-color: $background-color;
+
             &__list {
                padding-top: 20px;
+
                flex-direction: column;
                align-items: center;
+
                :not(:last-child) {
                   margin-right: 0;
                   margin-bottom: 30px;
@@ -113,9 +122,6 @@ body {
       }
    }
 
-   &__item {
-   }
-
    &__link {
       color: #4a4a4a;
       font-size: 16px;
@@ -125,11 +131,12 @@ body {
       &::after {
          content: "";
          position: absolute;
-         width: 0;
-         height: 2px;
          bottom: -8px;
          left: 50%;
          transform: translateX(-50%);
+
+         width: 0;
+         height: 2px;
          background-color: $orange;
 
          transition: width 0.8s;
@@ -191,19 +198,27 @@ body {
    }
 
    &__img {
-      flex: 1 1 500px;
       position: relative;
+      flex: 1 1 500px;
+
+      @media (max-width: $media2 + px) {
+         flex: 1 1 631px;
+      }
    }
 
    &__info {
       padding: 90px 0 44px;
       flex: 1 1 600px;
       @media (max-width: $media2 + px) {
-         padding: 40px 0 80px;
+         padding: 40px 0 40px;
       }
 
       @media (max-width: $media3 + px) {
-         padding: 20px 0 80px;
+         padding: 20px 0 30px;
+      }
+
+      @media (max-width: $media4 + px) {
+         padding: 10px 0 30px;
       }
    }
 
@@ -214,12 +229,14 @@ body {
 
       margin-bottom: 0.46em;
 
-      @media (max-width: $media3 + px) {
-         font-size: 36px;
-
+      @media (max-width: $media2 + px) and (min-width: 545px) {
          br:first-of-type {
             display: none;
          }
+      }
+
+      @media (max-width: $media3 + px) {
+         font-size: 36px;
       }
    }
 
@@ -232,7 +249,7 @@ body {
       width: 444px;
       margin-bottom: 2em;
 
-      @media (max-width: $media3 + px) {
+      @media (max-width: $media2 + px) {
          width: 100%;
       }
    }
@@ -266,6 +283,11 @@ body {
       font-size: 16px;
       font-weight: 400;
       letter-spacing: 0.16px;
+
+      @media (max-width: 370px) {
+         font-size: 14px;
+         padding: 21px 60px 22px 30px;
+      }
    }
 
    &__btn {
@@ -294,6 +316,10 @@ body {
 .users {
    display: flex;
    align-items: center;
+
+   @media (max-width: $media4 + px) {
+      justify-content: center;
+   }
 
    &__list {
       width: 104px;
@@ -333,6 +359,12 @@ body {
       a:hover {
          text-decoration: underline;
       }
+
+      @media (max-width: $media4 + px) {
+         a {
+            display: block;
+         }
+      }
    }
 }
 
@@ -361,11 +393,6 @@ body {
       width: 337px;
       height: 557px;
 
-      img {
-         object-fit: cover;
-         object-position: bottom;
-      }
-
       &::after {
          position: absolute;
          top: 13%;
@@ -378,6 +405,12 @@ body {
          height: 280px;
          border-radius: 280px;
          background: $green;
+      }
+
+      img {
+         object-fit: contain;
+         width: 100%;
+         height: 100%;
       }
    }
 }

@@ -1,3 +1,5 @@
+//------------------------------------------------------------------------------ расположение фотографий пользователей
+
 const users = document.querySelectorAll('.users__item');
 let zIndex = users.length;
 users.forEach((user, index) => {
@@ -5,10 +7,16 @@ users.forEach((user, index) => {
    user.style.zIndex = zIndex--;
 });
 
+
+//------------------------------------------------------------------------------ ограничения поиска
+
 const search = document.querySelector('.search-form__input');
 search.oninput = function () {
    this.value = this.value.replace(/[!@#$%^&*()]/g, '');
 }
+
+
+//----------------------------------------------------------------------------- загрузка текста 
 
 const subtitle = document.querySelector('.first-screen__subtitle');
 fetch(`https://baconipsum.com/api/?type=lucky`)
@@ -18,6 +26,8 @@ fetch(`https://baconipsum.com/api/?type=lucky`)
       console.log(error);
    });
 
+
+//---------------------------------------------------------------------------------- бургер меню
 
 const menuBurger = document.querySelector(".burger");
 const header = document.querySelector(".header");
