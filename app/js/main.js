@@ -13,6 +13,9 @@ users.forEach((user, index) => {
 const search = document.querySelector('.search-form__input');
 search.oninput = function () {
    this.value = this.value.replace(/[!@#$%^&*()]/g, '');
+   if (this.value.length > 12) {
+      this.value = this.value.substr(0, 12);
+   }
 }
 
 
